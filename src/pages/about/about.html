@@ -1,11 +1,37 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Cadastro de Atividades
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content padding>
+  <br>
+  <form [formGroup]="tarefa" #form="ngForm"  (ngSubmit)="logForm(form)">
+    <ion-item>
+      <ion-label>Nome:</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Data Limite:</ion-label>
+      <ion-input type="date" formControlName="data"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Status:</ion-label>
+      <ion-select placeholder="Selecione Um" formControlName="status">
+        <ion-option value="start">Iniciada</ion-option>
+        <ion-option value="problem">Com Problemas</ion-option>
+        <ion-option value="finished">Finalizada</ion-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <br>
+    <button ion-button large color="success" expand="full" type="submit">Cadastrar</button>
+    <button ion-button large color="danger" expand="full">Limpar</button>
+  </form>
+
+  
+
 
 </ion-content>
